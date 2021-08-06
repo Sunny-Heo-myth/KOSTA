@@ -9,6 +9,16 @@ public class P123 {
 		}
 		System.out.println(total);
 		
+		total = 0;
+		int i = 1;
+		while(i<+100) {
+			total += i;
+			i++;
+		}
+		System.out.println(total);
+		
+		
+		
 	}
 
 }

@@ -8,6 +8,16 @@ public class Exercise07 {
 		boolean run = true;
 		int balance = 0;
 		Scanner scan01 = new Scanner(System.in);
+		
+		int max = 0;
+		int[] array = {1,5,3,8,2};
+		
+		for(int i : array) {
+			if(i>max) {
+				max = i;
+			}
+		}
+		System.out.println("max : " + max);
 
 	}
 

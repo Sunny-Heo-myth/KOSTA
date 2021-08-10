@@ -8,7 +8,7 @@ public class Book {
 		this("untitled", 0);
 	}
 	// IF there are multiple constructors in one class, 
-	// one constructor can call another constructor by this().
+	// One constructor can call another constructor by this().
 	public Book(String title, int price) {
 		this.title = title;
 		this.price = price;

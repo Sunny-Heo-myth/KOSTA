@@ -12,7 +12,7 @@ public class Person {
 		this.age = age;
 		this.name = name;
 		
-		numberOfPersons += 1;
+		numberOfPersons++;
 	}
 
 	public Person() {
@@ -45,4 +45,5 @@ public class Person {
 		System.out.println(cal.multiply(10, 20));
 		System.out.println(cal.divide(10, 20));
 	}
+	
 }

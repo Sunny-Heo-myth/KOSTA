@@ -4,6 +4,8 @@ import com.kosta.day06.Coffee;
 
 public class ModifierTest {
 
+	// 1. static variable, method load
+	// 1. static block execute
 	public static void main(String[] args) {
 		Coffee co;
 		co = new Coffee();

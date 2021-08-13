@@ -9,17 +9,11 @@ public class CheckingAccount extends Account{
 		this.cardNo = cardNo;
 	}
 	
-	
-	
-
 	public CheckingAccount(String accountNo, String ownerName, int balance, int preference, String cardNo) {
 		super(accountNo, ownerName, balance);
 		this.preference = preference;
 		this.cardNo = cardNo;
 	}
-
-
-
 
 	int pay(String cardNo, int amount) {
 		if(!cardNo.equals(this.cardNo)) {

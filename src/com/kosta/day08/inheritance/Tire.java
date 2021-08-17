@@ -14,7 +14,7 @@ public class Tire {
 	}
 
 	public boolean roll(){
-		accumulatedRotation += 1;
+		++accumulatedRotation;
 		if(accumulatedRotation == maxRotation) {
 			System.out.println(location + " tire punk!");
 			return false;

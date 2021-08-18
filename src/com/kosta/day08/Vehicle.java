@@ -1,4 +1,4 @@
-Wpackage com.kosta.day08;
+package com.kosta.day08;
 
 public class Vehicle {
 	

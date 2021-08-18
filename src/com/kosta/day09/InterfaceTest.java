@@ -34,7 +34,7 @@ public class InterfaceTest {
 		a.setMute(true);
 		if(a instanceof SmartTelevision) {
 			SmartTelevision s = (SmartTelevision)a;
-			s.serach("http://wow");
+			s.search("http://wow");
 		}
 	}
 

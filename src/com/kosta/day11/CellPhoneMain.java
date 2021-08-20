@@ -2,7 +2,7 @@ package com.kosta.day11;
 
 public class CellPhoneMain {
 
-	public static void main(String[] args) throws IllegalArgumentException {
+	public static void main(String[] args) {
 
 		CellPhone myPhone = new CellPhone("SCH-600");
 		
@@ -14,14 +14,8 @@ public class CellPhoneMain {
 		myPhone.printBattery();
 		myPhone.call( 40 );  //40분간 통화를 한다.
 		myPhone.printBattery();
-		
-		try {
-			myPhone.call( -20 );  //통화시간이 잘못 입력되었다.
-			
-		} catch(IllegalArgumentException e) {
-			System.out.println( e.getMessage() ); 
-		} 
-		
+		myPhone.call( -20 );  //통화시간이 잘못 입력되었다.
+
 		CellPhone yourPhone = new CellPhone("SCH-600");
 		
 		if( myPhone.equals(yourPhone) ) {

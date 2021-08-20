@@ -10,20 +10,29 @@ public class CellPhone {
 		this.model = model;
 	}
 	
-	void call(int time) throws IllegalArgumentException {
+	void call(int time) {
 		
-		if(time < 0.0) throw new IllegalArgumentException("Call time exceed exception.");
-		System.out.println("Call time : " + time + "min");
-		battery -= (time * 0.5);
-		if(battery < 0.0) {battery = 0.0;}
+		try {
+			if(time < 0.0) throw new IllegalArgumentException("Call time exceed exception.");
+			System.out.println("Call time : " + time + "min");
+			battery -= (time * 0.5);
+			if(battery < 0.0) {battery = 0.0;}
+		}
+		catch(IllegalArgumentException i) {
+			System.out.println(i.getMessage());
+		}
 	}
 	
-	void charge(int time) throws IllegalArgumentException {
+	void charge(int time) {
 		
-		if(time < 0.0) throw new IllegalArgumentException("Charge time exceed exception.");
-		System.out.println("Charge time : " + time + "min");
-		battery += (time * 3);
-		if(battery > 100.0) {battery = 100.0;}
+		try {
+			if(time < 0.0) throw new IllegalArgumentException("Charge time exceed exception.");
+			System.out.println("Charge time : " + time + "min");
+			battery += (time * 3);
+			if(battery > 100.0) {battery = 100.0;}
+		}catch(IllegalArgumentException i){
+			i.getMessage();
+		}
 	}
 	
 	void printBattery() {

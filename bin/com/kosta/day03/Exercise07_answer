@@ -1,0 +1,44 @@
+package com.kosta.day03;
+
+import java.util.Scanner;
+
+public class Exercise07 {
+
+	public static void main(String[] args) {
+		//사용자입력받기, Scanner이용한 예제
+		boolean run=true;
+		int balance=0;
+		int amount = 0;
+		Scanner sc = new Scanner(System.in);
+		my:while(run) {
+			System.out.println("-----------------");
+			System.out.println("1.예금 2.출금 3.잔고 4.종료");
+			System.out.println("-----------------");
+			System.out.print("작업선택>>");
+			int work = sc.nextInt();
+			switch (work) {
+			case 1:
+				System.out.print("입금금액>>");
+				amount = sc.nextInt();
+				balance += amount;
+				break;
+			case 2:
+				System.out.print("출금금액>>");
+				amount = sc.nextInt();
+				if(balance < amount) {
+					System.out.println("잔고가 부족합니다.");
+				}else {
+					balance -= amount;
+				}
+				break;
+			case 3:
+				System.out.println("당신의 잔고는 " + balance);break;
+			case 4:
+				System.out.println("프로그램종료합니다.");break my;
+			default:
+				break;
+			}//switch end 			
+		} //while end	
+		sc.close();
+	}
+}

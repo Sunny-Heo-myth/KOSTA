@@ -11,7 +11,6 @@ public class Key {
 
 	@Override
 	public boolean equals(Object obj) {
-		// TODO Auto-generated method stub
 		return ((Key)obj).number == number;
 	}
 	

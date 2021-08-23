@@ -1,0 +1,44 @@
+package com.kosta.day03;
+
+//java MemoryTest
+//JVM이 class를 method영역에 load한다. 
+//main이 자동으로 호출된다. 
+public class MemoryTest {
+	public static void f1() {
+		int a=10;
+		char b='A';
+		String s = "자바";
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(s);
+	}
+
+	public static void f2() {
+		//지역변수는 초기화없이 사용불가. 
+		int a=0;
+		System.out.println(a);
+		
+		String s=null;
+		System.out.println(s);
+		
+		s = "자바프로그램";
+		System.out.println(s.length() + "글자수");
+		
+	}
+
+	public static void main(String[] args) {
+		int a=10;
+		char b='A';
+		String s = "자바"; //"자바"는 heap영역에 만들어진다.
+		                  //s는 stack에 만들어진다. 
+		s = null; //참조하지않음 , null은 정의된값이 없다. 
+		//"자바"는 dangling되어다. 참조하고있는 변수가 없다.
+		//JVM이 자동으로 clear한다. 
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(s);
+		f1();
+		f2();
+	}
+
+}

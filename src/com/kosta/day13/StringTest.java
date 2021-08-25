@@ -13,7 +13,9 @@ public class StringTest {
 		byte[] bytes = new byte[100];
 		int ret = System.in.read(bytes);
 		System.out.println(new String(bytes));
+		String s1 = new String(bytes); 
 		// Carriage return & new line so + 2
+		System.out.println(new String(bytes, 0, ret-2));
 	}
 
 	private static void f1() throws IOException {

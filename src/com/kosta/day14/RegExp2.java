@@ -17,7 +17,7 @@ public class RegExp2 {
 
 	private static void f1() {
 		String value = "My phone number is 010-1234-5678, Your phone number is 010-3154-7643.";
-		String p = "[01]{3}-([0-9]{3,4})-(\\d{4})";
+		String p = "[01]{3}-(\\d{3,4})-(\\d{4})";
 		
 		Pattern pattern = Pattern.compile(p);
 		Matcher matcher = pattern.matcher(value);

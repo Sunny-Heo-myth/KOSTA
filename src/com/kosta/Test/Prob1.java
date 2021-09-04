@@ -15,9 +15,9 @@ public class Prob1 {
 		int max = Integer.MIN_VALUE;
 		String maxPerson = "¾øÀ½";
 		String regExpScore = "\\d{1,3}";
-			
+		Pattern pat = Pattern.compile(regExpScore);
+		
 		for(int i = 0; i < array.length; i++) {
-			Pattern pat = Pattern.compile(regExpScore);
 			Matcher matcher = pat.matcher(array[i]);
 			boolean result = matcher.find();
 			

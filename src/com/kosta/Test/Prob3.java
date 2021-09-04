@@ -1,4 +1,4 @@
-
+package com.kosta.Test;
 
 class Prob3 {
 	public static void main(String args[]){
@@ -12,7 +12,50 @@ class Prob3 {
 }
 
 class PhoneCharge{	
-	//구현하시오.
+	private String user;//폰사용자이름
+	private int call;//통화시간(분단위)
+	private int sms;//문자전송건수
+	private int data;//데이터통신량(GB단위)
+	private int total;//통신요금(원)
+	
+	public PhoneCharge(String user, int call, int sms, int data) {
+		super();
+		this.user = user;
+		this.call = call;
+		this.sms = sms;
+		this.data = data;
+	}
+	
+	public int calcCharge() {
+		int callFee = 0;
+		int smsFee = 0;
+		int dataFee = 0;
+		this.total = 0;
 		
+		if(call < 200) {
+			callFee += 10 * call;
+		}else {
+			callFee += 20 * call;
+		}
+		
+		if(sms < 300) {
+			smsFee += 20 * sms;
+		}else {
+			smsFee += 80 * sms;
+		}
+		
+		if(data < 7) {
+			dataFee += 1000 * data;
+		}else {
+			dataFee += 2000 * data;
+		}
+		
+		total = callFee + smsFee + dataFee;
+		return total;
+	}
+
+	public void printCharge() {
+		System.out.println(this.user + " 사용자는 이번달에 사용하신 전화요금이 " + this.calcCharge() + " 원입니다.");
+	}
 }
  

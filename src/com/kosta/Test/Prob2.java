@@ -21,8 +21,7 @@ public class Prob2 {
 			for(int i = 0; i < str.length(); i++) {
 				result[indexDifference + i] = (char)strArray[i];
 			}
-			System.out.println(result.getClass());
-			return result.toString();
+			return new String(result);
 			
 		}else {
 			throw new IllegalSizeException("문자열의 길이보다 size가 큽니다.");
@@ -33,6 +32,7 @@ public class Prob2 {
 }
 
 //구현하시오.
+@SuppressWarnings("serial")
 class IllegalSizeException extends Exception {
 	 
 	public IllegalSizeException() {}

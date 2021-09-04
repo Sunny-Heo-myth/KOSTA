@@ -1,9 +1,18 @@
+package com.kosta.Test;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.HashSet;
 
 public class Prob4 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		Product[] prodList = {
 				new Product("NT450R5E-K24S",500000,"삼성전자"),
 				new Product("15UD340-LX2CK",400000,"LG전자"),
@@ -16,21 +25,41 @@ public class Prob4 {
 
 	
 	private static HashSet makeHashSet(Product[] prodList, int price) {
-		//구현하시오...return값 수정하기 
-		
-		
-		return null;
+		HashSet set = new HashSet();
+
+		for(Product p : prodList) {
+			if(p.getPrice() > price) {
+				set.add(p);
+			}
+		}
+		return set;
 	}
 
 
-	private static void makeFile(HashSet resultList)  {
-		//구현하시오.
-		 
+	private static void makeFile(HashSet resultList) throws IOException  {
+		File file = new File("C:\\KOSTA\\JavaProject\\src\\data.txt");
+		FileOutputStream fos = new FileOutputStream(file);
+		ObjectOutputStream oos = new ObjectOutputStream(fos);
 		
+		System.out.println("*특정 금액 이상의 상품 결과입니다.*****************");
 		
+		for(Object o : resultList) {
+			Product p = (Product)o;
+			System.out.println(p.toString());
+			oos.writeObject(p);
+		}
+		
+		oos.flush();
+		oos.close();
+		fos.close();
 	}
-	private static void readFile()  {
-		//구현하시오. 
+	
+	private static void readFile() throws IOException  {
+		FileInputStream fis = new FileInputStream("C:\\KOSTA\\JavaProject\\src\\data.txt");
+		ObjectInputStream ois = new ObjectInputStream(fis);
+		
+		System.out.println("readFile결과입니다.*****************");
+		
 	}
 
 }
